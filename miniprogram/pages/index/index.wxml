@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="image">
+  <image src="https://up.enterdesk.com/edpic/19/bd/59/19bd59069b30e77015e7d0758a2c036a.jpg">
+  </image>
+</view>
+<view class="title">
+  超可爱手绘小动物壁纸
+</view>
+<view class="btn">
+  <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">
+    分享
+  </van-button>
+  <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" bindtap="down">
+    下载
+  </van-button>
+
+</view>
