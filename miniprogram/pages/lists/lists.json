@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "更多",
-  "usingComponents": {}
+  "usingComponents": {
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index"
+  }
 }

@@ -9,24 +9,36 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    url: ''
+    url: '',
+    num: null,
+    files: '',
+    tempFileURL: ''
   },
-  down() {
-    wx.saveImageToPhotosAlbum({
-      filePath: '',
-      complete() {
-        console.log(111);
-
-      }
+  down(e) {
+    this.setData({
+      files: this.data.url[this.data.num].file
+    })
+    wx.cloud.downloadFile({
+      fileID: '' + e.currentTarget.dataset.id,
+      success: res => {
+        // get temp file path
+        wx.saveImageToPhotosAlbum({
+          filePath: '' + res.tempFilePath,
+          success: function (res1) {
+            console.log(res1)
+          }
+        })
+      },
     })
   },
+
+
   onLoad: function () {
     var that = this
     //数据请求
     db.collection('picture')
       .get()
       .then(res => {
-        console.log(res.data);
         that.setData({
           url: res.data
         })
@@ -34,12 +46,9 @@ Page({
       .catch(err => {
         console.log(err);
       });
-    // 每24小时更换一张图片
-    var date = new Date().getTime()
-    console.log(date);
-    if (date == date + 86400000) {
-
-    }
+    that.setData({
+      num: Math.floor(Math.random() * 20),
+    })
   },
 
   onGetUserInfo: function (e) {

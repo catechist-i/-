@@ -1,10 +1,10 @@
-<!--index.wxml-->
+<!--pages/detail/detail.wxml-->
 <view class="image">
-  <image src="{{url[num].url}}">
-  </image>
+  <image src="{{isUrl[0].url}}" bind:longpress="long"></image>
 </view>
+
 <view class="title">
-  {{url[num].title}}
+  {{isUrl[0].title}}
 </view>
 <view class="btn">
   <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" open-type="share">

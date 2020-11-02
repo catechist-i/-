@@ -1,13 +1,9 @@
 <!--miniprogram/pages/lists/lists.wxml-->
-<view class='content'>
-  <view class='left'>
-    <block wx:for="{{leftList}}" wx:key="index">
-      <image class='pic' style='height:{{item.CoverHeight}}' src='{{item.Cover}}'></image>
-    </block>
-  </view>
-  <view class='right'>
-    <block wx:for="{{rightList}}" wx:key="index">
-      <image class='pic' style='height:{{item.CoverHeight}}' src='{{item.Cover}}'></image>
-    </block>
-  </view>
-</view>
+<van-row>
+  <van-col span="8" wx:for="{{url}}" wx:key="index" class="lists" gutter="10px" bindtap="open">
+    <navigator class="" target="" url="{{'../detail/detail?id='+item._id}}" hover-class="navigator-hover"
+      open-type="navigate">
+      <image class="image-list" src="{{item.url}}" />
+    </navigator>
+  </van-col>
+</van-row>
