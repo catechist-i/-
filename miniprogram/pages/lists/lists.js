@@ -7,6 +7,7 @@ Page({
    */
   data: {
     url: [],
+    loading: true
   },
   /**
    * 生命周期函数--监听页面加载
@@ -18,20 +19,19 @@ Page({
       .get()
       .then(res => {
         that.setData({
-          url: res.data
+          url: res.data,
+          loading: false
+
         })
       })
       .catch(err => {
         console.log(err);
       });
-
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
+  onReady: function () {},
 
   /**
    * 生命周期函数--监听页面显示

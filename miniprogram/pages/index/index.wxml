@@ -1,17 +1,21 @@
 <!--index.wxml-->
-<view class="image">
-  <image src="{{url[num].url}}">
-  </image>
-</view>
-<view class="title">
-  {{url[num].title}}
-</view>
-<view class="btn">
-  <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" open-type="share">
-    分享
-  </van-button>
-  <van-button data-id="{{url[num].file}}" color="linear-gradient(to right, #4bb0ff, #6149f6)" bindtap="down">
-    下载
-  </van-button>
+<import src="index.skeleton.wxml" />
+<template is="skeleton" wx-if="{{loading}}" />
+<view wx:if="{{loading==false}}">
+  <view class="image">
+    <image src="{{url[num].url}}">
+    </image>
+  </view>
+  <view class="title">
+    {{url[num].title}}
+  </view>
+  <view class="btn">
+    <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" open-type="share">
+      分享
+    </van-button>
+    <van-button data-id="{{url[num].file}}" color="linear-gradient(to right, #4bb0ff, #6149f6)" bindtap="down">
+      下载
+    </van-button>
 
+  </view>
 </view>

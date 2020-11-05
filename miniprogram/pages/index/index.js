@@ -12,7 +12,8 @@ Page({
     url: '',
     num: null,
     files: '',
-    tempFileURL: ''
+    tempFileURL: '',
+    loading: true
   },
   down(e) {
     this.setData({
@@ -48,6 +49,7 @@ Page({
       });
     that.setData({
       num: Math.floor(Math.random() * 20),
+      loading: false
     })
   },
 

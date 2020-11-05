@@ -1,9 +1,13 @@
 <!--miniprogram/pages/lists/lists.wxml-->
-<van-row>
-  <van-col span="8" wx:for="{{url}}" wx:key="index" class="lists" gutter="10px" bindtap="open">
-    <navigator class="" target="" url="{{'../detail/detail?id='+item._id}}" hover-class="navigator-hover"
-      open-type="navigate">
-      <image class="image-list" src="{{item.url}}" />
-    </navigator>
-  </van-col>
-</van-row>
+<import src="lists.skeleton.wxml" />
+<template is="skeleton" wx-if="{{loading}}" />
+<view wx:if="{{loading==false}}">
+  <van-row>
+    <van-col span="8" wx:for="{{url}}" wx:key="index" class="lists" gutter="10px" bindtap="open">
+      <navigator class="" target="" url="{{'../detail/detail?id='+item._id}}" hover-class="navigator-hover"
+        open-type="navigate">
+        <image class="image-list" src="{{item.url}}" />
+      </navigator>
+    </van-col>
+  </van-row>
+</view>

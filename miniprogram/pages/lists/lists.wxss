@@ -1,3 +1,5 @@
+@import "./lists.skeleton.wxss";
+
 .image-list {
   width: 100% !important;
 }
